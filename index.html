@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <p class="paragraph">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium voluptates rem vero. Facere cum maxime inventore voluptatum doloribus consequatur. Impedit molestiae voluptatibus quisquam commodi tenetur vel nihil, aliquam adipisci tempora.
+    </p>
+    <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet magni voluptates inventore dolores ex ullam magnam illo explicabo, natus cupiditate hic suscipit nemo eum, omnis distinctio sapiente. Iure, expedita perferendis?</p>
+
+    <p id="unique">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore eligendi obcaecati corrupti explicabo ex voluptates molestias voluptas. Asperiores similique eaque molestias. Sint, quos unde. Numquam quis provident quaerat ipsum cumque.</p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nihil consequatur doloribus a natus. Veritatis soluta possimus nemo doloremque? Fuga, reprehenderit deserunt nisi ipsa consectetur doloremque repellendus laborum unde nostrum.</p>
+
+    <form name="form" onsubmit="getDetails(event)">
+        <input type="text" name="name" id="name">
+        liked ? 
+        <input type="checkbox" name="liked" id="1" value="1">1
+        <input type="checkbox" name="liked" id="2" value="2">2
+        <input type="checkbox" name="liked" id="3" value="3">3
+        <input type="checkbox" name="liked" id="4" value="4">4
+
+        gender ?
+
+        <input type="radio" name="gender" id="male" value="M">Male
+        <input type="radio" name="gender" id="female" value="F">Female
+
+        <input type="submit" value="submit">
+    </form>
+
+    <script>
+
+        function getDetails(event){
+            event.preventDefault();
+            console.log(event.target);
+            console.log(event.target.name.value);
+            console.log(event.target.liked);
+            console.log(event.target.gender.value);
+            console.log(document['forms']);
+        }
+        const paragraphs = document.getElementsByTagName("p");
+        console.log(paragraphs);
+
+        const unique = document.getElementById("unique");
+        console.log(unique);
+
+        const classParagraphs = document.getElementsByClassName("paragraph");
+        console.log(classParagraphs);
+
+        unique.style.color = 'red'
+        Array.from(classParagraphs).forEach((ele) => {
+            ele.style.backgroundColor = 'yellow'
+        })
+        Array.from(paragraphs).forEach((ele) => {
+            ele.style.fontWeight = 'bold'
+        })
+    </script>
+</body>
+</html>
